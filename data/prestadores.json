@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-02",
+  "items": [
+    {
+      "slug": "pedro-pinturas",
+      "nome": "Pedro Henrique",
+      "titulo": "Pintor Profissional",
+      "categoria": "Pintura",
+      "tags": [
+        "Pintura",
+        "Massa corrida",
+        "Textura"
+      ],
+      "cidade": "Campinas",
+      "estado": "SP",
+      "bairro": "",
+      "regiaoAtendimento": "Campinas, Hortolândia, Sumaré e região",
+      "chamada": "Pintura interna e externa com acabamento limpo, organização e compromisso com prazo.",
+      "whatsapp": "5519999999999",
+      "email": "",
+      "foto": "",
+      "avatarInicial": "P",
+      "status": "Disponível para orçamento",
+      "precoReferencia": "Diária ou orçamento por serviço",
+      "experiencia": "8 anos de experiência",
+      "servicos": [
+        "Pintura interna e externa",
+        "Aplicação de massa corrida",
+        "Textura e grafiato",
+        "Correção de imperfeições"
+      ],
+      "diferenciais": [
+        "Organização no ambiente de trabalho",
+        "Entrega com limpeza final",
+        "Atendimento residencial e comercial"
+      ],
+      "experiencias": [
+        {
+          "titulo": "Pintura residencial completa",
+          "descricao": "Preparação de paredes, massa corrida, pintura interna e acabamento em residência familiar."
+        }
+      ],
+      "cursos": [
+        "Pintura predial e residencial",
+        "Preparação de superfície",
+        "Noções de segurança em obra"
+      ],
+      "portfolio": [
+        {
+          "titulo": "Pintura interna",
+          "descricao": "Acabamento limpo em paredes internas.",
+          "imagem": ""
+        }
+      ],
+      "observacoes": "Atende com orçamento prévio. Materiais podem ser combinados com o cliente.",
+      "ativo": true,
+      "destaque": true,
+      "ordem": 1,
+      "createdAt": "2026-06-02",
+      "updatedAt": "2026-06-02"
+    },
+    {
+      "slug": "joao-pedreiro",
+      "nome": "João Batista",
+      "titulo": "Pedreiro de Obras",
+      "categoria": "Alvenaria",
+      "tags": [
+        "Pedreiro",
+        "Reforma",
+        "Acabamento"
+      ],
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "bairro": "Interlagos",
+      "regiaoAtendimento": "Zona Sul de São Paulo e região",
+      "chamada": "Serviços de alvenaria, reforma e acabamento com experiência em obras residenciais.",
+      "whatsapp": "5511988887777",
+      "email": "",
+      "foto": "",
+      "avatarInicial": "J",
+      "status": "Disponível para orçamento",
+      "precoReferencia": "Orçamento por serviço",
+      "experiencia": "12 anos de experiência",
+      "servicos": [
+        "Alvenaria",
+        "Reformas residenciais",
+        "Assentamento de pisos",
+        "Reboco e acabamento"
+      ],
+      "diferenciais": [
+        "Experiência com reformas completas",
+        "Compromisso com prazo",
+        "Boa comunicação com cliente"
+      ],
+      "experiencias": [
+        {
+          "titulo": "Reforma de área externa",
+          "descricao": "Execução de alvenaria, regularização de piso e acabamento em área de lazer."
+        }
+      ],
+      "cursos": [
+        "Noções de segurança em obra",
+        "Leitura básica de projeto"
+      ],
+      "portfolio": [],
+      "observacoes": "Disponibilidade deve ser confirmada pelo WhatsApp.",
+      "ativo": true,
+      "destaque": true,
+      "ordem": 2,
+      "createdAt": "2026-06-02",
+      "updatedAt": "2026-06-02"
+    },
+    {
+      "slug": "ana-eletrica",
+      "nome": "Ana Costa",
+      "titulo": "Eletricista Residencial",
+      "categoria": "Elétrica",
+      "tags": [
+        "Elétrica",
+        "Instalação",
+        "Manutenção"
+      ],
+      "cidade": "Guarulhos",
+      "estado": "SP",
+      "bairro": "",
+      "regiaoAtendimento": "Guarulhos, São Paulo e Grande São Paulo",
+      "chamada": "Instalação, manutenção e revisão elétrica com foco em segurança e organização.",
+      "whatsapp": "5511977776666",
+      "email": "",
+      "foto": "",
+      "avatarInicial": "A",
+      "status": "Agenda sob consulta",
+      "precoReferencia": "Visita técnica ou orçamento por serviço",
+      "experiencia": "6 anos de experiência",
+      "servicos": [
+        "Instalação de tomadas e luminárias",
+        "Quadros elétricos",
+        "Manutenção preventiva",
+        "Identificação de falhas"
+      ],
+      "diferenciais": [
+        "Atendimento organizado",
+        "Explicação clara do serviço",
+        "Foco em segurança"
+      ],
+      "experiencias": [
+        {
+          "titulo": "Revisão elétrica residencial",
+          "descricao": "Correção de pontos, revisão de disjuntores e melhoria de distribuição elétrica."
+        }
+      ],
+      "cursos": [
+        "Eletricista instalador",
+        "NR10 básica"
+      ],
+      "portfolio": [],
+      "observacoes": "Serviços elétricos exigem avaliação prévia de segurança.",
+      "ativo": true,
+      "destaque": false,
+      "ordem": 3,
+      "createdAt": "2026-06-02",
+      "updatedAt": "2026-06-02"
+    }
+  ]
+}

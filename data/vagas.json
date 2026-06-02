@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-02",
+  "items": [
+    {
+      "slug": "pedreiro-obras-interlagos-sp",
+      "empresaSlug": "optima-rh",
+      "titulo": "Pedreiro de Obras",
+      "categoria": "Construção Civil",
+      "funcao": "Pedreiro",
+      "servico": "Alvenaria, reforma e acabamento",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "bairro": "Interlagos",
+      "tipoContrato": "Temporário com chance de efetivação",
+      "regime": "CLT",
+      "salario": "R$ 3.039,95",
+      "beneficios": [
+        "Vale transporte em dinheiro",
+        "Vale alimentação",
+        "Refeição no local ou VR"
+      ],
+      "requisitos": [
+        "Experiência na área com registro em carteira",
+        "Morar próximo ou ter fácil acesso",
+        "Cursos correlatos são diferencial"
+      ],
+      "atividades": [
+        "Execução de serviços de obra",
+        "Apoio em frentes de alvenaria e acabamento",
+        "Organização e segurança no ambiente de trabalho"
+      ],
+      "horario": "Segunda a quinta das 07h às 17h e sexta das 07h às 16h",
+      "contato": {
+        "nome": "Jemillyn",
+        "whatsapp": "5511975047060",
+        "email": ""
+      },
+      "status": "Aberta",
+      "dataPublicacao": "2026-06-01",
+      "validade": "",
+      "observacoes": "Não possui alojamento. Enviar currículo e informar a função de interesse.",
+      "ativo": true,
+      "destaque": true,
+      "ordem": 1,
+      "createdAt": "2026-06-01",
+      "updatedAt": "2026-06-01"
+    },
+    {
+      "slug": "montador-andaime-ipiranga-sp",
+      "empresaSlug": "optima-rh",
+      "titulo": "Montador de Andaime",
+      "categoria": "Construção Civil",
+      "funcao": "Montador de Andaime",
+      "servico": "Montagem e desmontagem de andaimes",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "bairro": "Ipiranga",
+      "tipoContrato": "Temporário",
+      "regime": "CLT",
+      "salario": "A combinar",
+      "beneficios": [
+        "Vale transporte",
+        "Vale refeição",
+        "Seguro de vida"
+      ],
+      "requisitos": [
+        "Experiência com montagem de andaime",
+        "Disponibilidade para início imediato",
+        "Curso na área será diferencial"
+      ],
+      "atividades": [
+        "Montagem e desmontagem de estruturas",
+        "Organização de materiais",
+        "Apoio à equipe de segurança"
+      ],
+      "horario": "Horário comercial",
+      "contato": {
+        "nome": "Recrutamento",
+        "whatsapp": "5511975047060",
+        "email": ""
+      },
+      "status": "Aberta",
+      "dataPublicacao": "2026-06-02",
+      "validade": "",
+      "observacoes": "Enviar currículo informando a função Montador de Andaime.",
+      "ativo": true,
+      "destaque": false,
+      "ordem": 2,
+      "createdAt": "2026-06-02",
+      "updatedAt": "2026-06-02"
+    },
+    {
+      "slug": "pintor-residencial-campinas-sp",
+      "empresaSlug": "construmax",
+      "titulo": "Pintor Residencial",
+      "categoria": "Acabamento",
+      "funcao": "Pintor",
+      "servico": "Pintura interna, externa e acabamento",
+      "cidade": "Campinas",
+      "estado": "SP",
+      "bairro": "Cambuí",
+      "tipoContrato": "Contrato por obra",
+      "regime": "Autônomo",
+      "salario": "Orçamento por serviço",
+      "beneficios": [
+        "Pagamento por etapa",
+        "Possibilidade de novos serviços"
+      ],
+      "requisitos": [
+        "Experiência com pintura residencial",
+        "Ter ferramentas básicas",
+        "Compromisso com prazo"
+      ],
+      "atividades": [
+        "Preparação de paredes",
+        "Aplicação de massa e tinta",
+        "Acabamento e limpeza final"
+      ],
+      "horario": "A combinar",
+      "contato": {
+        "nome": "Equipe Construmax",
+        "whatsapp": "5519333332222",
+        "email": ""
+      },
+      "status": "Aberta",
+      "dataPublicacao": "2026-05-30",
+      "validade": "",
+      "observacoes": "Preferência para profissionais de Campinas e região.",
+      "ativo": true,
+      "destaque": false,
+      "ordem": 3,
+      "createdAt": "2026-05-30",
+      "updatedAt": "2026-05-30"
+    }
+  ]
+}

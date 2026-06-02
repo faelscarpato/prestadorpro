@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-02",
+  "items": [
+    {
+      "slug": "kit-divulgacao",
+      "nome": "Kit Divulgação Profissional",
+      "subtitulo": "Arte pronta para divulgar seu serviço com aparência profissional.",
+      "publicoAlvo": "Prestadores de serviço, profissionais autônomos e equipes de obra.",
+      "preco": "1 arte + texto por R$ 40",
+      "precoAlternativo": "Pacote com 3 artes por R$ 120",
+      "imagem": "/assets/img/kit-divulgacao.png",
+      "beneficios": [
+        "Divulgação mais profissional",
+        "Pronto para WhatsApp, status e Instagram",
+        "Texto comercial incluído",
+        "Visual moderno para gerar mais confiança"
+      ],
+      "comoFunciona": [
+        "Você envia nome, serviço, cidade e contato",
+        "A arte é criada com visual profissional",
+        "Você recebe o material pronto para divulgar",
+        "Pode usar em grupos, status e redes sociais"
+      ],
+      "ctaTexto": "Quero meu kit de divulgação",
+      "ativo": true,
+      "ordem": 1,
+      "destaque": true
+    },
+    {
+      "slug": "cartao-digital",
+      "nome": "Cartão Digital",
+      "subtitulo": "Uma página simples para apresentar seu serviço e facilitar contato pelo WhatsApp.",
+      "publicoAlvo": "Prestadores que querem um link profissional para compartilhar.",
+      "preco": "A partir de R$ 120",
+      "precoAlternativo": "",
+      "imagem": "/assets/img/cartao-digital.png",
+      "beneficios": [
+        "Link profissional para divulgar",
+        "Botão direto para WhatsApp",
+        "Apresentação organizada do serviço",
+        "Pode ser usado como bio do Instagram"
+      ],
+      "comoFunciona": [
+        "Você envia seus dados e serviços",
+        "A página é montada em formato simples",
+        "Você recebe um link para divulgar",
+        "O cliente chama direto pelo WhatsApp"
+      ],
+      "ctaTexto": "Quero meu cartão digital",
+      "ativo": true,
+      "ordem": 2,
+      "destaque": true
+    },
+    {
+      "slug": "radar-vagas",
+      "nome": "Radar de Vagas e Obras",
+      "subtitulo": "Divulgação organizada de vagas e oportunidades para profissionais de obra.",
+      "publicoAlvo": "Empresas, RHs, empreiteiras e profissionais buscando vaga.",
+      "preco": "A partir de R$ 9,90/mês",
+      "precoAlternativo": "Divulgação de vaga a partir de R$ 20 por vaga",
+      "imagem": "/assets/img/radar-vagas.png",
+      "beneficios": [
+        "Vagas organizadas por cidade e função",
+        "Candidatura rápida pelo WhatsApp",
+        "Página pública para compartilhar",
+        "Busca simples no navegador"
+      ],
+      "comoFunciona": [
+        "A empresa envia os dados da vaga",
+        "A vaga é cadastrada no JSON",
+        "A página fica pública no site",
+        "O candidato entra em contato pelo WhatsApp"
+      ],
+      "ctaTexto": "Divulgar uma vaga",
+      "ativo": true,
+      "ordem": 3,
+      "destaque": true
+    },
+    {
+      "slug": "banco-prestadores",
+      "nome": "Banco de Prestadores",
+      "subtitulo": "Cadastro de profissionais com página de apresentação e contato direto.",
+      "publicoAlvo": "Prestadores, autônomos, equipes e clientes procurando profissionais.",
+      "preco": "Cadastro simples por R$ 20",
+      "precoAlternativo": "Página completa a partir de R$ 120",
+      "imagem": "/assets/img/banco-prestadores.png",
+      "beneficios": [
+        "Mais visibilidade para o profissional",
+        "Perfil público com serviços e experiência",
+        "Contato direto por WhatsApp",
+        "Organização por categoria e cidade"
+      ],
+      "comoFunciona": [
+        "O prestador envia os dados básicos",
+        "O cadastro é incluído no banco",
+        "Pode receber uma página individual",
+        "O link pode ser compartilhado com clientes"
+      ],
+      "ctaTexto": "Cadastrar prestador",
+      "ativo": true,
+      "ordem": 4,
+      "destaque": false
+    },
+    {
+      "slug": "curriculo-obra",
+      "nome": "Currículo Profissional",
+      "subtitulo": "Currículo objetivo para profissionais que querem se candidatar a vagas de obra.",
+      "publicoAlvo": "Pedreiros, pintores, ajudantes, eletricistas, encanadores e demais funções.",
+      "preco": "R$ 30",
+      "precoAlternativo": "",
+      "imagem": "/assets/img/curriculo-obra.png",
+      "beneficios": [
+        "Currículo mais claro e organizado",
+        "Foco em experiência prática",
+        "Pronto para enviar pelo WhatsApp",
+        "Melhor apresentação para RHs"
+      ],
+      "comoFunciona": [
+        "Você envia suas experiências e dados",
+        "O currículo é organizado de forma profissional",
+        "Você recebe o arquivo pronto para envio",
+        "Pode usar para vagas e entrevistas"
+      ],
+      "ctaTexto": "Quero meu currículo",
+      "ativo": true,
+      "ordem": 5,
+      "destaque": false
+    },
+    {
+      "slug": "portfolio-tecnico",
+      "nome": "Portfólio Técnico Express",
+      "subtitulo": "Página com fotos, serviços, experiência e diferenciais para mostrar trabalhos realizados.",
+      "publicoAlvo": "Profissionais que já têm fotos de serviços e querem uma vitrine mais profissional.",
+      "preco": "A partir de R$ 120",
+      "precoAlternativo": "",
+      "imagem": "/assets/img/portfolio-tecnico.png",
+      "beneficios": [
+        "Mostra trabalhos realizados",
+        "Aumenta confiança do cliente",
+        "Organiza serviços e diferenciais",
+        "Facilita indicação por link"
+      ],
+      "comoFunciona": [
+        "Você envia fotos e descrição dos serviços",
+        "As informações são organizadas em uma página",
+        "O link pode ser compartilhado com clientes",
+        "O WhatsApp fica disponível para orçamento"
+      ],
+      "ctaTexto": "Quero meu portfólio",
+      "ativo": true,
+      "ordem": 6,
+      "destaque": false
+    }
+  ]
+}

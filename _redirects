@@ -1,0 +1,15 @@
+/prestadores /index.html 200
+/prestador/* /index.html 200
+
+/empresas /index.html 200
+/empresa/* /index.html 200
+
+/vagas /index.html 200
+/vaga/* /index.html 200
+
+/kit-divulgacao /index.html 200
+/cartao-digital /index.html 200
+/radar-vagas /index.html 200
+/banco-prestadores /index.html 200
+/curriculo-obra /index.html 200
+/portfolio-tecnico /index.html 200
