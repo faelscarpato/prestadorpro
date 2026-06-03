@@ -2,7 +2,7 @@
 // sem quebrar Cloudflare Pages estatico e permitimos override por script global.
 const runtimeConfig = globalThis.__PRESTADOR_PRO_CONFIG__ || {};
 const mainWhatsAppFromEnv = import.meta.env?.VITE_MAIN_WHATSAPP;
-const mainWhatsApp = runtimeConfig.mainWhatsApp || mainWhatsAppFromEnv || "5511975047060";
+const mainWhatsApp = runtimeConfig.mainWhatsApp || mainWhatsAppFromEnv || "5519995466902";
 
 export const CONFIG = {
   productName: "Prestador Pro",
