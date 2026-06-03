@@ -10,7 +10,7 @@
       "estado": "SP",
       "regiaoAtendimento": "São Paulo, Grande São Paulo e obras parceiras",
       "descricao": "Agência com vagas para construção civil, operação, manutenção e funções de apoio em obra.",
-      "whatsapp": "5511975047060",
+      "whatsapp": "",
       "email": "",
       "site": "",
       "logo": "",
@@ -31,7 +31,8 @@
       "destaque": true,
       "ordem": 1,
       "createdAt": "2026-06-02",
-      "updatedAt": "2026-06-02"
+      "updatedAt": "2026-06-02",
+      "verificada": true
     },
     {
       "slug": "construmax",
@@ -41,7 +42,7 @@
       "estado": "SP",
       "regiaoAtendimento": "Campinas e região metropolitana",
       "descricao": "Construtora com obras residenciais e comerciais, contratando profissionais de apoio e acabamento.",
-      "whatsapp": "5519333332222",
+      "whatsapp": "",
       "email": "",
       "site": "",
       "logo": "",
@@ -61,7 +62,8 @@
       "destaque": false,
       "ordem": 2,
       "createdAt": "2026-06-02",
-      "updatedAt": "2026-06-02"
+      "updatedAt": "2026-06-02",
+      "verificada": false
     },
     {
       "slug": "pb-construcoes",
@@ -71,7 +73,7 @@
       "estado": "SP",
       "regiaoAtendimento": "Guarulhos, Zona Norte e Grande São Paulo",
       "descricao": "Empreiteira parceira para serviços de alvenaria, manutenção, pintura e apoio em obras.",
-      "whatsapp": "5511966665555",
+      "whatsapp": "",
       "email": "",
       "site": "",
       "logo": "",
@@ -91,7 +93,8 @@
       "destaque": false,
       "ordem": 3,
       "createdAt": "2026-06-02",
-      "updatedAt": "2026-06-02"
+      "updatedAt": "2026-06-02",
+      "verificada": false
     }
   ]
 }

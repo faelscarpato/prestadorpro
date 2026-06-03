@@ -1,6 +1,6 @@
 import { bySlug, getServices } from "../data.js";
 import { CONFIG, whatsappUrl } from "../config.js";
-import { button, list, notFoundPage, sectionHead, setSeo, tags, whatsappButton } from "../templates.js";
+import { button, escapeHtml as e, list, notFoundPage, safeUrl, sectionHead, setSeo, tags, whatsappButton } from "../templates.js";
 
 export async function renderServico(slug) {
   const services = await getServices();
@@ -16,14 +16,15 @@ export async function renderServico(slug) {
   });
 
   const message = `Olá, vim pelo Prestador Pro e quero contratar: ${service.nome}.`;
+  const image = safeUrl(service.imagem, "");
 
   return `
     <section class="detail-hero">
       <div class="container detail-grid">
         <div>
           <span class="eyebrow">Serviço digital</span>
-          <h1>${service.nome}</h1>
-          <p class="lead">${service.subtitulo}</p>
+          <h1>${e(service.nome)}</h1>
+          <p class="lead">${e(service.subtitulo)}</p>
           ${tags([service.publicoAlvo])}
           <div class="hero-actions">
             ${whatsappButton(service.ctaTexto || "Pedir no WhatsApp", CONFIG.mainWhatsApp, message, "primary")}
@@ -32,10 +33,10 @@ export async function renderServico(slug) {
         </div>
 
         <aside class="card detail-aside">
-          ${service.imagem ? `<div class="card-image"><img src="${service.imagem}" alt="${service.nome}" loading="lazy"></div>` : ""}
+          ${image ? `<div class="card-image"><img src="${e(image)}" alt="${e(service.nome)}" loading="lazy"></div>` : ""}
           <h3>Oferta</h3>
-          <p class="price">${service.preco || "Preço sob consulta"}</p>
-          ${service.precoAlternativo ? `<p>${service.precoAlternativo}</p>` : ""}
+          <p class="price">${e(service.preco || "Preço sob consulta")}</p>
+          ${service.precoAlternativo ? `<p>${e(service.precoAlternativo)}</p>` : ""}
           <div class="card-actions">
             ${button("Chamar no WhatsApp", whatsappUrl(CONFIG.mainWhatsApp, message), "primary", 'target="_blank" rel="noopener"')}
           </div>
@@ -46,12 +47,12 @@ export async function renderServico(slug) {
     <section class="section section-tight">
       <div class="container grid grid-2">
         <article class="card">
-          ${sectionHead("Benefícios", "")}
+          ${sectionHead("Benefícios", "", "", "Entrega")}
           ${list(service.beneficios)}
         </article>
 
         <article class="card">
-          ${sectionHead("Como funciona", "")}
+          ${sectionHead("Como funciona", "", "", "Processo")}
           ${list(service.comoFunciona)}
         </article>
       </div>

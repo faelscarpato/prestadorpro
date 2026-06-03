@@ -1,5 +1,5 @@
 import { bySlug, getEmpresas, getVagas } from "../data.js";
-import { button, list, notFoundPage, sectionHead, setSeo, statusTag, tags } from "../templates.js";
+import { button, escapeHtml as e, list, notFoundPage, sectionHead, setSeo, statusTag, tag, trustNotice } from "../templates.js";
 import { whatsappUrl } from "../config.js";
 
 function contactButton(vaga, empresa) {
@@ -42,17 +42,18 @@ export async function renderVaga(slug) {
       <div class="container detail-grid">
         <div>
           <span class="eyebrow">Vaga de obra</span>
-          <h1>${vaga.titulo}</h1>
-          <p class="lead">${empresa?.nome || "Empresa cadastrada"} · ${local}</p>
+          <h1>${e(vaga.titulo)}</h1>
+          <p class="lead">${e(empresa?.nome || "Empresa cadastrada")} · ${e(local)}</p>
           <div class="tag-row">
             ${statusTag(vaga.status)}
-            ${tags([vaga.funcao, vaga.categoria, vaga.regime])}
+            ${[vaga.funcao, vaga.categoria, vaga.regime].filter(Boolean).map((item) => tag(item)).join("")}
           </div>
 
           <div class="hero-actions">
             ${contactButton(vaga, empresa)}
             ${button("Ver todas as vagas", "/vagas", "secondary")}
           </div>
+          ${trustNotice("vaga")}
         </div>
 
         <aside class="card detail-aside">
@@ -60,19 +61,19 @@ export async function renderVaga(slug) {
           <div class="kv-grid">
             <div class="kv">
               <small>Salário</small>
-              <strong>${vaga.salario || "A combinar"}</strong>
+              <strong>${e(vaga.salario || "A combinar")}</strong>
             </div>
             <div class="kv">
               <small>Regime</small>
-              <strong>${vaga.regime || "Consultar"}</strong>
+              <strong>${e(vaga.regime || "Consultar")}</strong>
             </div>
             <div class="kv">
               <small>Tipo de contrato</small>
-              <strong>${vaga.tipoContrato || "Consultar"}</strong>
+              <strong>${e(vaga.tipoContrato || "Consultar")}</strong>
             </div>
             <div class="kv">
-              <small>Publicado em</small>
-              <strong>${vaga.dataPublicacao || "Data não informada"}</strong>
+              <small>Publicação</small>
+              <strong>${e(vaga.dataPublicacao || "Data não informada")}</strong>
             </div>
           </div>
         </aside>
@@ -82,11 +83,11 @@ export async function renderVaga(slug) {
     <section class="section section-tight">
       <div class="container grid grid-2">
         <article class="card">
-          ${sectionHead("Atividades", "")}
+          ${sectionHead("Atividades", "", "", "Rotina")}
           ${list(vaga.atividades)}
         </article>
         <article class="card">
-          ${sectionHead("Requisitos", "")}
+          ${sectionHead("Requisitos", "", "", "Perfil")}
           ${list(vaga.requisitos)}
         </article>
       </div>
@@ -95,23 +96,23 @@ export async function renderVaga(slug) {
     <section class="section section-tight">
       <div class="container grid grid-2">
         <article class="card">
-          ${sectionHead("Benefícios", "")}
+          ${sectionHead("Benefícios", "", "", "Pacote")}
           ${list(vaga.beneficios)}
         </article>
         <article class="card">
-          ${sectionHead("Horário e contato", "")}
+          ${sectionHead("Horário e contato", "", "", "Contato")}
           <div class="kv-grid">
             <div class="kv">
               <small>Horário</small>
-              <strong>${vaga.horario || "Consultar"}</strong>
+              <strong>${e(vaga.horario || "Consultar")}</strong>
             </div>
             <div class="kv">
               <small>Contato</small>
-              <strong>${vaga.contato?.nome || empresa?.nome || "Responsável pela vaga"}</strong>
+              <strong>${e(vaga.contato?.nome || empresa?.nome || "Responsável pela vaga")}</strong>
             </div>
             <div class="kv">
               <small>Empresa</small>
-              <strong>${empresa ? `<a href="/empresa/${empresa.slug}" data-link>${empresa.nome}</a>` : "Empresa não encontrada"}</strong>
+              <strong>${empresa ? `<a href="/empresa/${e(empresa.slug)}" data-link>${e(empresa.nome)}</a>` : "Empresa não encontrada"}</strong>
             </div>
           </div>
         </article>
@@ -121,7 +122,7 @@ export async function renderVaga(slug) {
     ${vaga.observacoes ? `
       <section class="section section-tight">
         <div class="container">
-          <div class="notice">${vaga.observacoes}</div>
+          <div class="notice">${e(vaga.observacoes)}</div>
         </div>
       </section>
     ` : ""}

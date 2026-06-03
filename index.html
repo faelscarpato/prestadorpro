@@ -8,16 +8,16 @@
   <meta property="og:title" content="Prestador Pro — Serviços Digitais para Obra" />
   <meta property="og:description" content="Divulgue seu serviço. Encontre profissionais. Cadastre vagas." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#061323" />
+  <meta name="theme-color" content="#147a4a" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23061323'/%3E%3Cpath d='M16 43V20h18c7 0 12 4 12 11s-5 12-12 12h-9v-8h8c3 0 5-1 5-4s-2-4-5-4h-9v16z' fill='%2328f59b'/%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#app">Pular para o conteúdo</a>
 
   <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="brand" href="index.html" data-link aria-label="Prestador Pro - Início">
+      <a class="brand" href="/" data-link aria-label="Prestador Pro - Início">
         <span class="brand-mark">PP</span>
         <span>
           <strong>Prestador Pro</strong>
@@ -33,10 +33,11 @@
 
       <nav class="main-nav" data-nav>
         <a href="/" data-link>Início</a>
+        <a href="/como-funciona" data-link>Como funciona</a>
         <a href="/prestadores" data-link>Prestadores</a>
         <a href="/empresas" data-link>Empresas</a>
         <a href="/vagas" data-link>Vagas</a>
-        <a class="nav-cta" href="https://wa.me/5511975047060?text=Ol%C3%A1%2C%20vim%20pelo%20Prestador%20Pro%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="nav-cta" href="https://wa.me/5511975047060?text=Ol%C3%A1%2C%20vim%20pelo%20Prestador%20Pro%20e%20quero%20saber%20mais." target="_blank" rel="noopener" data-track-whatsapp="true">Falar no WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -44,7 +45,7 @@
   <main id="app" tabindex="-1" aria-live="polite">
     <section class="section">
       <div class="container">
-        <div class="state-card">
+        <div class="state-card" role="status" aria-live="polite">
           <div class="spinner"></div>
           <p>Carregando Prestador Pro...</p>
         </div>
@@ -76,11 +77,14 @@
         <a href="/prestadores" data-link>Banco de Prestadores</a>
         <a href="/empresas" data-link>Empresas</a>
         <a href="/vagas" data-link>Radar de Vagas</a>
+        <a href="/como-funciona" data-link>Como funciona</a>
+        <a href="/termos" data-link>Termos</a>
+        <a href="/privacidade" data-link>Privacidade</a>
       </div>
       <div>
         <h3>Contato</h3>
         <p>Atendimento rápido pelo WhatsApp.</p>
-        <a class="btn btn-primary btn-small" href="https://wa.me/5511975047060?text=Ol%C3%A1%2C%20vim%20pelo%20Prestador%20Pro." target="_blank" rel="noopener">Chamar agora</a>
+        <a class="btn btn-primary btn-small" href="https://wa.me/5511975047060?text=Ol%C3%A1%2C%20vim%20pelo%20Prestador%20Pro." target="_blank" rel="noopener" data-track-whatsapp="true">Chamar agora</a>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -88,6 +92,6 @@
     </div>
   </footer>
 
-  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="/assets/js/app.js"></script>
 </body>
 </html>

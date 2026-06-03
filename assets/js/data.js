@@ -1,3 +1,5 @@
+import { validateDataFile, logValidationResult } from "./validators/schema.js";
+
 const cache = new Map();
 
 async function loadJson(path) {
@@ -11,24 +13,30 @@ async function loadJson(path) {
 
   const data = await response.json();
   const items = Array.isArray(data) ? data : data.items || [];
+
+  // Validar schema antes de cachear
+  const type = path.split('/').pop().replace('.json', '');
+  const validation = validateDataFile(data, type);
+  logValidationResult(validation, type);
+
   cache.set(path, items);
   return items;
 }
 
 export function getServices() {
-  return loadJson("./data/servicos.json");
+  return loadJson("/data/servicos.json");
 }
 
 export function getPrestadores() {
-  return loadJson("./data/prestadores.json");
+  return loadJson("/data/prestadores.json");
 }
 
 export function getEmpresas() {
-  return loadJson("./data/empresas.json");
+  return loadJson("/data/empresas.json");
 }
 
 export function getVagas() {
-  return loadJson("./data/vagas.json");
+  return loadJson("/data/vagas.json");
 }
 
 export async function getAllData() {

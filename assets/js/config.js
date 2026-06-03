@@ -1,8 +1,14 @@
+// Em HTML estatico puro, import.meta.env nao existe. Mantemos suporte a Vite
+// sem quebrar Cloudflare Pages estatico e permitimos override por script global.
+const runtimeConfig = globalThis.__PRESTADOR_PRO_CONFIG__ || {};
+const mainWhatsAppFromEnv = import.meta.env?.VITE_MAIN_WHATSAPP;
+const mainWhatsApp = runtimeConfig.mainWhatsApp || mainWhatsAppFromEnv || "5511975047060";
+
 export const CONFIG = {
   productName: "Prestador Pro",
   brandName: "Rafa Design & IA",
   siteDescription: "Vitrine digital para divulgar prestadores, empresas e vagas da construção civil.",
-  mainWhatsApp: "5511975047060",
+  mainWhatsApp,
   defaultCity: "São Paulo",
   defaultState: "SP",
   urls: {

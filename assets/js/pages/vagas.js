@@ -1,6 +1,6 @@
 import { activeItems, getEmpresas, getVagas, sortItems } from "../data.js";
 import { filterBySelect, getSearchBlob, includesText, uniqueSorted } from "../filters.js";
-import { button, card, emptyState, sectionHead, setSeo, whatsappButton } from "../templates.js";
+import { button, card, emptyState, escapeHtml as e, sectionHead, setSeo, whatsappButton } from "../templates.js";
 
 function vagaCard(vaga, empresa) {
   const local = [vaga.bairro, vaga.cidade, vaga.estado].filter(Boolean).join(" · ");
@@ -11,6 +11,8 @@ function vagaCard(vaga, empresa) {
     text: `${empresa?.nome || "Empresa"} · ${local}. ${vaga.tipoContrato || ""}`,
     price: vaga.salario || "Salário a combinar",
     tags: [vaga.funcao, vaga.categoria, vaga.status].filter(Boolean),
+    kicker: "Vaga aberta",
+    className: "listing-card job-card",
     actions: `
       ${button("Ver detalhes", `/vaga/${vaga.slug}`, "secondary")}
       ${whatsappButton("Candidatar agora", vaga.contato?.whatsapp || empresa?.whatsapp, message, "primary")}
@@ -25,19 +27,31 @@ function renderFilters(vagas) {
 
   return `
     <div class="filters" data-vagas-filters>
-      <input class="input" type="search" placeholder="Buscar por vaga, empresa, cidade, função..." data-search>
-      <select class="select" data-city>
-        <option value="">Todas as cidades</option>
-        ${cidades.map((city) => `<option value="${city}">${city}</option>`).join("")}
-      </select>
-      <select class="select" data-role>
-        <option value="">Todas as funções</option>
-        ${funcoes.map((role) => `<option value="${role}">${role}</option>`).join("")}
-      </select>
-      <select class="select" data-category>
-        <option value="">Todas as categorias</option>
-        ${categorias.map((category) => `<option value="${category}">${category}</option>`).join("")}
-      </select>
+      <label class="filter-field">
+        <span class="field-label">Buscar vaga</span>
+        <input class="input" type="search" aria-label="Buscar vaga por título, empresa, cidade ou função" placeholder="Vaga, empresa, cidade ou função" data-search>
+      </label>
+      <label class="filter-field">
+        <span class="field-label">Cidade</span>
+        <select class="select" data-city>
+          <option value="">Todas as cidades</option>
+          ${cidades.map((city) => `<option value="${e(city)}">${e(city)}</option>`).join("")}
+        </select>
+      </label>
+      <label class="filter-field">
+        <span class="field-label">Função</span>
+        <select class="select" data-role>
+          <option value="">Todas as funções</option>
+          ${funcoes.map((role) => `<option value="${e(role)}">${e(role)}</option>`).join("")}
+        </select>
+      </label>
+      <label class="filter-field">
+        <span class="field-label">Categoria</span>
+        <select class="select" data-category>
+          <option value="">Todas as categorias</option>
+          ${categorias.map((category) => `<option value="${e(category)}">${e(category)}</option>`).join("")}
+        </select>
+      </label>
     </div>
   `;
 }
@@ -66,8 +80,8 @@ export async function renderVagas() {
       <div class="container">
         ${renderFilters(vagas)}
         <div class="result-bar">
-          <span><strong data-result-count>${vagas.length}</strong> vagas encontradas</span>
-          <button class="btn btn-small btn-secondary" type="button" data-clear>Limpar filtros</button>
+          <span aria-live="polite"><strong data-result-count>${vagas.length}</strong> vagas encontradas</span>
+          <button class="btn btn-small btn-secondary" type="button" data-clear disabled>Limpar filtros</button>
         </div>
         <div class="grid grid-3" data-vagas-list>
           ${vagas.length ? vagas.map((vaga) => vagaCard(vaga, empresas.find((empresa) => empresa.slug === vaga.empresaSlug))).join("") : emptyState("Nenhuma vaga cadastrada", "Cadastre a primeira vaga pelo JSON.")}
@@ -98,6 +112,7 @@ function bindVagasFilters(vagas, empresas) {
     const selectedCity = city.value;
     const selectedRole = role.value;
     const selectedCategory = category.value;
+    if (clear) clear.disabled = !(query || selectedCity || selectedRole || selectedCategory);
 
     const filtered = vagas.filter((vaga) => {
       const empresa = getEmpresa(vaga);

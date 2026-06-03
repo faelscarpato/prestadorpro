@@ -1,6 +1,6 @@
 import { activeItems, getEmpresas, getVagas, sortItems } from "../data.js";
 import { filterBySelect, getSearchBlob, includesText, uniqueSorted } from "../filters.js";
-import { button, card, emptyState, sectionHead, setSeo, statusTag, whatsappButton } from "../templates.js";
+import { button, card, emptyState, escapeHtml as e, sectionHead, setSeo, statusTag, whatsappButton } from "../templates.js";
 
 function empresaCard(empresa, vagas) {
   const linked = vagas.filter((vaga) => vaga.empresaSlug === empresa.slug && vaga.ativo !== false);
@@ -10,7 +10,9 @@ function empresaCard(empresa, vagas) {
   return card({
     title: empresa.nome,
     text: `${empresa.tipo} · ${local}. ${empresa.descricao}`,
-    tags: [empresa.status, `${abertas} vagas abertas`].filter(Boolean),
+    tags: [empresa.verificada ? "Verificada manualmente" : empresa.status, `${abertas} vagas abertas`].filter(Boolean),
+    kicker: "Empresa cadastrada",
+    className: "listing-card company-card",
     actions: `
       ${button("Ver empresa", `/empresa/${empresa.slug}`, "secondary")}
       ${button("Ver vagas", `/empresa/${empresa.slug}`, "primary")}
@@ -24,16 +26,25 @@ function renderFilters(empresas) {
 
   return `
     <div class="filters" data-empresas-filters>
-      <input class="input" type="search" placeholder="Buscar por empresa, cidade, segmento..." data-search>
-      <select class="select" data-city>
-        <option value="">Todas as cidades</option>
-        ${cidades.map((city) => `<option value="${city}">${city}</option>`).join("")}
-      </select>
-      <select class="select" data-type>
-        <option value="">Todos os tipos</option>
-        ${tipos.map((type) => `<option value="${type}">${type}</option>`).join("")}
-      </select>
-      <button class="btn btn-secondary" type="button" data-clear>Limpar</button>
+      <label class="filter-field">
+        <span class="field-label">Buscar empresa</span>
+        <input class="input" type="search" aria-label="Buscar empresa por nome, cidade ou segmento" placeholder="Empresa, cidade ou segmento" data-search>
+      </label>
+      <label class="filter-field">
+        <span class="field-label">Cidade</span>
+        <select class="select" data-city>
+          <option value="">Todas as cidades</option>
+          ${cidades.map((city) => `<option value="${e(city)}">${e(city)}</option>`).join("")}
+        </select>
+      </label>
+      <label class="filter-field">
+        <span class="field-label">Tipo</span>
+        <select class="select" data-type>
+          <option value="">Todos os tipos</option>
+          ${tipos.map((type) => `<option value="${e(type)}">${e(type)}</option>`).join("")}
+        </select>
+      </label>
+      <button class="btn btn-secondary" type="button" data-clear disabled>Limpar filtros</button>
     </div>
   `;
 }
@@ -62,7 +73,7 @@ export async function renderEmpresas() {
       <div class="container">
         ${renderFilters(empresas)}
         <div class="result-bar">
-          <span><strong data-result-count>${empresas.length}</strong> empresas encontradas</span>
+          <span aria-live="polite"><strong data-result-count>${empresas.length}</strong> empresas encontradas</span>
         </div>
         <div class="grid grid-3" data-empresas-list>
           ${empresas.length ? empresas.map((empresa) => empresaCard(empresa, vagas)).join("") : emptyState("Nenhuma empresa cadastrada", "Cadastre a primeira empresa pelo JSON.")}
@@ -87,6 +98,7 @@ function bindEmpresasFilters(empresas, vagas) {
     const query = search.value;
     const selectedCity = city.value;
     const selectedType = type.value;
+    clear.disabled = !(query || selectedCity || selectedType);
 
     const filtered = empresas.filter((empresa) => {
       const blob = getSearchBlob([

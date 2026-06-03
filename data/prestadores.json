@@ -17,7 +17,7 @@
       "bairro": "",
       "regiaoAtendimento": "Campinas, Hortolândia, Sumaré e região",
       "chamada": "Pintura interna e externa com acabamento limpo, organização e compromisso com prazo.",
-      "whatsapp": "5519999999999",
+      "whatsapp": "",
       "email": "",
       "foto": "",
       "avatarInicial": "P",
@@ -58,7 +58,8 @@
       "destaque": true,
       "ordem": 1,
       "createdAt": "2026-06-02",
-      "updatedAt": "2026-06-02"
+      "updatedAt": "2026-06-02",
+      "verificado": true
     },
     {
       "slug": "joao-pedreiro",
@@ -75,7 +76,7 @@
       "bairro": "Interlagos",
       "regiaoAtendimento": "Zona Sul de São Paulo e região",
       "chamada": "Serviços de alvenaria, reforma e acabamento com experiência em obras residenciais.",
-      "whatsapp": "5511988887777",
+      "whatsapp": "",
       "email": "",
       "foto": "",
       "avatarInicial": "J",
@@ -109,7 +110,8 @@
       "destaque": true,
       "ordem": 2,
       "createdAt": "2026-06-02",
-      "updatedAt": "2026-06-02"
+      "updatedAt": "2026-06-02",
+      "verificado": false
     },
     {
       "slug": "ana-eletrica",
@@ -126,7 +128,7 @@
       "bairro": "",
       "regiaoAtendimento": "Guarulhos, São Paulo e Grande São Paulo",
       "chamada": "Instalação, manutenção e revisão elétrica com foco em segurança e organização.",
-      "whatsapp": "5511977776666",
+      "whatsapp": "",
       "email": "",
       "foto": "",
       "avatarInicial": "A",
@@ -160,7 +162,8 @@
       "destaque": false,
       "ordem": 3,
       "createdAt": "2026-06-02",
-      "updatedAt": "2026-06-02"
+      "updatedAt": "2026-06-02",
+      "verificado": false
     }
   ]
 }

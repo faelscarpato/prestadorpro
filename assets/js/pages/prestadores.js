@@ -1,6 +1,6 @@
 import { activeItems, getPrestadores, sortItems } from "../data.js";
 import { filterBySelect, getSearchBlob, includesText, uniqueSorted } from "../filters.js";
-import { button, card, emptyState, sectionHead, setSeo, whatsappButton } from "../templates.js";
+import { button, card, emptyState, escapeHtml as e, sectionHead, setSeo, whatsappButton } from "../templates.js";
 
 function prestadorCard(prestador) {
   const local = [prestador.cidade, prestador.estado].filter(Boolean).join("/");
@@ -9,7 +9,9 @@ function prestadorCard(prestador) {
   return card({
     title: prestador.nome,
     text: `${prestador.titulo} · ${local}. ${prestador.chamada}`,
-    tags: [prestador.categoria, prestador.status].filter(Boolean),
+    tags: [prestador.categoria, prestador.verificado ? "Verificado manualmente" : prestador.status].filter(Boolean),
+    kicker: "Prestador cadastrado",
+    className: "listing-card provider-card",
     actions: `
       ${button("Ver portfólio", `/prestador/${prestador.slug}`, "secondary")}
       ${whatsappButton("WhatsApp", prestador.whatsapp, message, "primary")}
@@ -23,16 +25,25 @@ function renderFilters(prestadores) {
 
   return `
     <div class="filters" data-prestadores-filters>
-      <input class="input" type="search" placeholder="Buscar por nome, serviço, cidade..." data-search>
-      <select class="select" data-city>
-        <option value="">Todas as cidades</option>
-        ${cidades.map((city) => `<option value="${city}">${city}</option>`).join("")}
-      </select>
-      <select class="select" data-category>
-        <option value="">Todas as categorias</option>
-        ${categorias.map((category) => `<option value="${category}">${category}</option>`).join("")}
-      </select>
-      <button class="btn btn-secondary" type="button" data-clear>Limpar</button>
+      <label class="filter-field">
+        <span class="field-label">Buscar prestador</span>
+        <input class="input" type="search" aria-label="Buscar prestador por nome, serviço ou cidade" placeholder="Nome, serviço ou cidade" data-search>
+      </label>
+      <label class="filter-field">
+        <span class="field-label">Cidade</span>
+        <select class="select" data-city>
+          <option value="">Todas as cidades</option>
+          ${cidades.map((city) => `<option value="${e(city)}">${e(city)}</option>`).join("")}
+        </select>
+      </label>
+      <label class="filter-field">
+        <span class="field-label">Categoria</span>
+        <select class="select" data-category>
+          <option value="">Todas as categorias</option>
+          ${categorias.map((category) => `<option value="${e(category)}">${e(category)}</option>`).join("")}
+        </select>
+      </label>
+      <button class="btn btn-secondary" type="button" data-clear disabled>Limpar filtros</button>
     </div>
   `;
 }
@@ -60,7 +71,7 @@ export async function renderPrestadores() {
       <div class="container">
         ${renderFilters(prestadores)}
         <div class="result-bar">
-          <span><strong data-result-count>${prestadores.length}</strong> prestadores encontrados</span>
+          <span aria-live="polite"><strong data-result-count>${prestadores.length}</strong> prestadores encontrados</span>
         </div>
         <div class="grid grid-3" data-prestadores-list>
           ${prestadores.length ? prestadores.map(prestadorCard).join("") : emptyState("Nenhum prestador cadastrado", "Cadastre o primeiro profissional pelo JSON.")}
@@ -85,6 +96,7 @@ function bindPrestadoresFilters(prestadores) {
     const query = search.value;
     const selectedCity = city.value;
     const selectedCategory = category.value;
+    clear.disabled = !(query || selectedCity || selectedCategory);
 
     const filtered = prestadores.filter((prestador) => {
       const blob = getSearchBlob([

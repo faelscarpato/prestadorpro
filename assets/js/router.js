@@ -7,6 +7,9 @@ import { renderEmpresas } from "./pages/empresas.js";
 import { renderEmpresa } from "./pages/empresa.js";
 import { renderVagas } from "./pages/vagas.js";
 import { renderVaga } from "./pages/vaga.js";
+import { renderComoFunciona } from "./pages/como-funciona.js";
+import { renderTermos } from "./pages/termos.js";
+import { renderPrivacidade } from "./pages/privacidade.js";
 
 const serviceRoutes = new Set([
   "kit-divulgacao",
@@ -28,6 +31,12 @@ export async function route() {
 
     if (path === "/") {
       html = await renderHome();
+    } else if (path === "/como-funciona") {
+      html = renderComoFunciona();
+    } else if (path === "/termos") {
+      html = renderTermos();
+    } else if (path === "/privacidade") {
+      html = renderPrivacidade();
     } else if (path === "/prestadores") {
       html = await renderPrestadores();
     } else if (path.startsWith("/prestador/")) {
@@ -48,7 +57,13 @@ export async function route() {
 
     app.innerHTML = html;
     app.focus({ preventScroll: true });
-    window.scrollTo({ top: 0, behavior: "instant" });
+
+    if (window.location.hash) {
+      document.querySelector(window.location.hash)?.scrollIntoView({ behavior: "instant", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
     setActiveNav(path);
   } catch (error) {
     console.error(error);
